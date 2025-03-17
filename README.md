@@ -2,21 +2,30 @@
 
 ## Problem Statement
 
-- There are \(N\) orders \((1, 2, \dots, N)\), in which order \(i\) has quantity \(d(i)\) and cost \(c(i)\).
-- There are \(K\) vehicles \((1, 2, \dots, K)\) for serving orders in which vehicle \(k\) has low-bound capacity \(c_1(k)\) and up-capacity \(c_2(k)\). Compute a solution for assigning orders to vehicles such that:
+- There are **N** orders **(1, 2, ..., N)**, in which order **i** has quantity **d(i)** and cost **c(i)**.
+- There are **K** vehicles **(1, 2, ..., K)** for serving orders, where vehicle **k** has a lower-bound capacity **c1(k)** and an upper-bound capacity **c2(k)**.  
+  Compute a solution for assigning orders to vehicles such that:
   - Each order is served by at most one vehicle.
-  - Sum of quantity of orders loaded (served) in a vehicle must be between the low-capacity and up-capacity of that vehicle.
-  - Total cost of served orders is maximal.
+  - The sum of the quantities of orders loaded (served) in a vehicle must be between the lower and upper capacity of that vehicle.
+  - The total cost of served orders is maximized.
 
 ## Input
 
-- **Line 1**: contains positive integers \(N\) and \(K\) \(\(1 \leq N \leq 1000, 1 \leq K \leq 100\)\)
-- **Line \(i+1\)** \((i = 1, \dots, N)\): contains 2 integers \(d(i)\) and \(c(i)\) \(\(1 \leq d(i), c(i) \leq 100\)\)
-- **Line \(N+1+k\)** \((k = 1, \dots, K)\): contains 2 integers \(c_1(k)\) and \(c_2(k)\) \(\(1 \leq c_1(k) \leq c_2(k) \leq 1000\)\)
+- **Line 1**: Contains two positive integers **N** and **K**  
+  (**1 ≤ N ≤ 1000, 1 ≤ K ≤ 100**)
+- **Line (i+1)** (for **i = 1 to N**): Contains two integers **d(i)** and **c(i)**  
+  (**1 ≤ d(i), c(i) ≤ 100**)
+- **Line (N+1+k)** (for **k = 1 to K**): Contains two integers **c1(k)** and **c2(k)**  
+  (**1 ≤ c1(k) ≤ c2(k) ≤ 1000**)
 
 ## Output
 
 The output should contain the optimal assignment of orders to vehicles while maximizing the total cost.
+
+### Format:
+- **Line 1**: An integer **m**, the number of assigned orders.
+- **Next m lines**: Each line contains two integers **i** and **b**,  
+  where order **i** is served by vehicle **b**.
 
 
 
