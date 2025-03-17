@@ -41,14 +41,17 @@ def read_input(file_path):
     
     return N, K, demands, costs, c1, c2
 
-def write_output(assignments, file_path):
-    """Ghi kết quả ra file txt theo định dạng yêu cầu."""
+def write_output(assignments, total_cost, not_assigned, file_path):
+    """Ghi kết quả ra file"""
     try:
-        with open(file_path, 'w') as f:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(f"Tổng cost tối ưu: {total_cost}\n")
             m = len(assignments)
             f.write(f"{m}\n")
             for order_id, vehicle_id in assignments:
                 f.write(f"{order_id} {vehicle_id}\n")
+            for i in not_assigned:
+                f.write(f"Đơn hàng {i} không được vận chuyển\n")
     except IOError:
         print(f"Error writing to file: {file_path}")
         sys.exit(1)
