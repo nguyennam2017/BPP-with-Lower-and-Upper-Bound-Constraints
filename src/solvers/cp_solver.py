@@ -43,10 +43,19 @@ def solve_binpacking(N, K, demands, costs, c1, c2):
     status = solver.Solve(model)
     
     assignments = []
+    total_cost = 0
+    not_assigned = []
     if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         for i in range(N):
+            assigned = False
             for k in range(K):
                 if solver.Value(x[i][k]) == 1:
-                    # Lưu ý: tăng chỉ số lên 1 để theo định dạng đề bài (bắt đầu từ 1)
-                    assignments.append((i + 1, k + 1))
-    return assignments
+                    assignments.append((i + 1, k + 1))  # (đơn hàng, xe)
+                    total_cost += costs[i]
+                    assigned = True
+            if not assigned:
+                not_assigned.append(i + 1)
+        
+        print(f"Tổng cost tối ưu: {total_cost}")
+    
+    return assignments, total_cost, not_assigned
