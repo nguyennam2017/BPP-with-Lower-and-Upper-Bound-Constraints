@@ -55,7 +55,5 @@ def solve_binpacking(N, K, demands, costs, c1, c2):
                     assigned = True
             if not assigned:
                 not_assigned.append(i + 1)
-        
-        print(f"Tổng cost tối ưu: {total_cost}")
-    
+            
     return assignments, total_cost, not_assigned
