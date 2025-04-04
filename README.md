@@ -33,20 +33,29 @@ The output should contain the optimal assignment of orders to vehicles while max
 ```
 project-root/
 │── data/
-│   ├── input/        # Directory containing input files
-│   ├── output/       # Directory containing output results
+│   ├── input/                # Directory containing input test cases
+│   │   ├── hustack_input/    # Subfolder for test case on hustack website
+│   │   │   ├── gen_input.txt
+│   │   │   ├── sample_input.txt
+│   │
+│   ├── output/               # Directory for storing output results
+│   │   ├── hustack_output/   # Subfolder for right answers of hustack test cases
+│   │   ├── program_output.txt
 │
 │── src/
-│   ├── solvers/      # Contains bin packing solving algorithms
-│   │   ├── cp_solver.py
+│   ├── solvers/              # Contains bin packing solving algorithms
+│   │   ├── ACO_solver.py     # Ant Colony Optimization solver
+│   │   ├── cp_solver.py      # Constraint Programming solver
 │   │
-│   ├── utils/        # Utilities for handling I/O
+│   ├── utils/                # Utilities for handling I/O and performance measurement
 │   │   ├── io_utils.py
+│   │   ├── performance.py
+│   │   ├── test_case_generator.py
 │   │
-│   ├── main.py       # Main program
+│   ├── main.py               # Main program entry point
 │
-│── README.md         # User guide
-│── requirements.txt  # List of required libraries
+│── README.md                 # User guide and project documentation
+│── requirements.txt          # List of required libraries
 ```
 
 ## Installation
