@@ -1,0 +1,5 @@
+test_edge_1.txt: N=10, K=3, orders=[1-100], vehicles=[10-15]
+test_edge_2.txt: N=10, K=3, orders=[1-100], vehicles=[10-15]
+test_edge_3.txt: N=10, K=3, orders=[1-100], vehicles=[10-15]
+test_edge_4.txt: N=10, K=3, orders=[1-100], vehicles=[10-15]
+test_edge_5.txt: N=10, K=3, orders=[1-100], vehicles=[10-15]
