@@ -1,11 +1,18 @@
 import numpy as np
 import random
+import time
 
 class ACOBinPackingSolver:
     def __init__(self, N, K, demands, costs, c1, c2,
-                 num_ants=100, num_iterations=100,
+                 num_ants=200, num_iterations=100,
                  alpha=1, beta=2, evaporation=0.5, Q=100, 
-                 elite_ants=5, verbose=True):
+                 elite_ants=5, time_limit=float('inf'), verbose=True):
+        """
+        Khởi tạo ACO solver với thêm tham số time_limit.
+
+        Args:
+            time_limit (float): Giới hạn thời gian chạy (giây), mặc định là vô cực.
+        """
         self.N = N
         self.K = K
         self.demands = demands
@@ -19,6 +26,7 @@ class ACOBinPackingSolver:
         self.evaporation = evaporation
         self.Q = Q
         self.elite_ants = min(elite_ants, num_ants)  # Số kiến tinh hoa (không vượt quá num_ants)
+        self.time_limit = time_limit  # Thêm tham số giới hạn thời gian
         self.verbose = verbose
 
         # Khởi tạo ma trận pheromone
@@ -47,13 +55,20 @@ class ACOBinPackingSolver:
         return np.random.choice(range(self.K), p=probabilities)
 
     def solve(self):
-        """Giải bài toán bằng ACO với kiến tinh hoa để tối đa hóa tổng chi phí."""
+        """Giải bài toán bằng ACO với kiến tinh hoa, dừng nếu vượt quá time_limit."""
         best_solution = None
         best_cost = 0
 
         heuristic = self._calculate_heuristic()
+        start_time = time.time()  # Thời điểm bắt đầu giải thuật
 
         for iteration in range(self.num_iterations):
+            # Kiểm tra giới hạn thời gian trước mỗi vòng lặp
+            if time.time() - start_time > self.time_limit:
+                if self.verbose:
+                    print(f"Time limit ({self.time_limit}s) exceeded at iteration {iteration}. Stopping.")
+                break
+
             solutions = []  # Danh sách (assignment, cost) của từng kiến
 
             for ant in range(self.num_ants):
@@ -91,9 +106,16 @@ class ACOBinPackingSolver:
 
         # Xử lý trường hợp không tìm thấy giải pháp
         if best_solution is None:
+            if self.verbose:
+                print("No feasible solution found within time limit.")
             return [], 0, list(range(1, self.N + 1))
 
+        # Chuyển đổi định dạng đầu ra
         assignments = [(i + 1, k + 1) for i, k in enumerate(best_solution) if k != -1]
         not_assigned = [i + 1 for i, k in enumerate(best_solution) if k == -1]
-        return assignments, best_cost, not_assigned
 
+        if self.verbose:
+            elapsed_time = time.time() - start_time
+            print(f"Completed in {elapsed_time:.2f}s with total cost = {best_cost}")
+
+        return assignments, best_cost, not_assigned

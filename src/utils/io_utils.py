@@ -1,7 +1,14 @@
 import sys
 
 def read_input(file_path):
-    """Đọc dữ liệu đầu vào từ file txt."""
+    """Đọc dữ liệu đầu vào từ file txt.
+    Args:
+        file_path (str): Đường dẫn đến file đầu vào chứa thông tin đơn hàng và phương tiện.
+    
+    Returns:
+        tuple: (N, K, demands, costs, c1, c2) chứa số đơn hàng, số phương tiện, 
+               danh sách khối lượng, chi phí đơn hàng, giới hạn dưới và trên của phương tiện.
+    """
     try:
         with open(file_path, 'r') as f:
             lines = f.readlines()
