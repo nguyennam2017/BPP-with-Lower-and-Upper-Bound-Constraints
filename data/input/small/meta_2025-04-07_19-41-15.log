@@ -1,0 +1,5 @@
+test_small_1.txt: N=10, K=3, orders=[1-50], vehicles=[50-200]
+test_small_2.txt: N=10, K=3, orders=[1-50], vehicles=[50-200]
+test_small_3.txt: N=10, K=3, orders=[1-50], vehicles=[50-200]
+test_small_4.txt: N=10, K=3, orders=[1-50], vehicles=[50-200]
+test_small_5.txt: N=10, K=3, orders=[1-50], vehicles=[50-200]
