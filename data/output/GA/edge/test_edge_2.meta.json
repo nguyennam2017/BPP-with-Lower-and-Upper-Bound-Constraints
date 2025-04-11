@@ -1,0 +1,9 @@
+{
+  "input_file": "test_edge_2.txt",
+  "num_runs": 10,
+  "min_cost": 444,
+  "max_cost": 444,
+  "average_cost": 444,
+  "std_cost": 0.0,
+  "total_time": 0.6413
+}
