@@ -15,7 +15,7 @@ def main():
                 "random",   # Trường hợp random
                 "hustack"   # Các test trên hustack
             ]
-    benchmark_solver(solver_name= "GA", solver_func = GABinPackingSolver, category = "random", num_runs=1)
+    benchmark_solver(solver_name= "GA", solver_func = GABinPackingSolver, category = "edge", num_runs=1)
     # for category in Category:
     #     benchmark_solver(solver_name = "GA", solver_func=GABinPackingSolver, category=category, num_runs=20, time_limit=10)
 if __name__ == "__main__":

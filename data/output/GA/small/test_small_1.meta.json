@@ -2,5 +2,5 @@
   "input_file": "test_small_1.txt",
   "num_runs": 1,
   "total_cost": 186,
-  "total_time": 20.0
+  "total_time": 0.0304
 }
