@@ -151,8 +151,11 @@ class HillClimbingSearch():
     def print_solution(self):
         best_x = self.best_x
         best_load = self.best_load
+        best_obj = self.best_obj
         c1 = self.c1
         c2 = self.c2
+        not_assigned = []
+        assignments = []
         for vehicle in range(1, self.K + 1):
             orders_in_vehicle = [order for order in range(self.N) if best_x[order] == vehicle]
             if best_load[vehicle] > c2[vehicle] or best_load[vehicle] < c1[vehicle]:
@@ -162,15 +165,21 @@ class HillClimbingSearch():
         for order in range(self.N):
             if best_x[order] != 0:
                 served += 1
+            else:
+                not_assigned.append(order)
         print(served)
         for order in range(self.N):
             if best_x[order] != 0:
-                print(f"{order + 1} {best_x[order]}")        
+                print(f"{order + 1} {best_x[order]}")
+                assignments.append((order + 1, best_x[order]))
+
+        return assignments, best_obj, not_assigned   
 
     def solve(self):
         self.init_solution()
         self.update()
-        self.print_solution()
+        assignments, best_obj, not_assigned = self.print_solution()
+        return assignments, best_obj, not_assigned
 
 
 # n, k = list(map(int, input().split()))
