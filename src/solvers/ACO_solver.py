@@ -65,8 +65,8 @@ class ACOBinPackingSolver:
         for iteration in range(self.num_iterations):
             # Kiểm tra giới hạn thời gian trước mỗi vòng lặp
             if time.time() - start_time > self.time_limit:
-                if self.verbose:
-                    print(f"Time limit ({self.time_limit}s) exceeded at iteration {iteration}. Stopping.")
+                # if self.verbose:
+                #     print(f"Time limit ({self.time_limit}s) exceeded at iteration {iteration}. Stopping.")
                 break
 
             solutions = []  # Danh sách (assignment, cost) của từng kiến
@@ -106,8 +106,8 @@ class ACOBinPackingSolver:
 
         # Xử lý trường hợp không tìm thấy giải pháp
         if best_solution is None:
-            if self.verbose:
-                print("No feasible solution found within time limit.")
+            #if self.verbose:
+                #print("No feasible solution found within time limit.")
             return [], 0, list(range(1, self.N + 1))
 
         # Chuyển đổi định dạng đầu ra
@@ -116,6 +116,6 @@ class ACOBinPackingSolver:
 
         if self.verbose:
             elapsed_time = time.time() - start_time
-            print(f"Completed in {elapsed_time:.2f}s with total cost = {best_cost}")
+            #print(f"Completed in {elapsed_time:.2f}s with total cost = {best_cost}")
 
         return assignments, best_cost, not_assigned

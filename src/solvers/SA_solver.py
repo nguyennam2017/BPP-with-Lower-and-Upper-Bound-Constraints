@@ -119,8 +119,8 @@ class SimulatedAnnealingSearch:
         self.best_obj = self.current_obj
         self.best_x = self.x[:]
         
-        if self.verbose:
-            print(f"Initial greedy solution objective: {self.best_obj}")
+        # if self.verbose:
+        #     print(f"Initial greedy solution objective: {self.best_obj}")
 
     def get_solution_details(self, assignments_to_check: List[int]) -> Tuple[List[Tuple[int, int]], List[int]]:
         """
@@ -189,8 +189,8 @@ class SimulatedAnnealingSearch:
 
         while temp > self.min_temp:
             if time.time() - start_time > self.time_limit:
-                if self.verbose:
-                    print(f"Time limit ({self.time_limit}s) exceeded at iteration {iteration_count}. Stopping.")
+                # if self.verbose:
+                #     print(f"Time limit ({self.time_limit}s) exceeded at iteration {iteration_count}. Stopping.")
                 break
             
             iteration_count += 1
@@ -204,8 +204,8 @@ class SimulatedAnnealingSearch:
                 temp *= self.cooling_rate
                 self.iterations_since_last_improvement +=1
                 if self.iterations_since_last_improvement > self.max_iterations_no_improvement and iteration_count > 100: # Allow some initial exploration
-                    if self.verbose:
-                        print(f"Stopping early at iter {iteration_count} due to no improvement in {self.max_iterations_no_improvement} iters.")
+                    # if self.verbose:
+                    #     print(f"Stopping early at iter {iteration_count} due to no improvement in {self.max_iterations_no_improvement} iters.")
                     break
                 continue
 
@@ -245,8 +245,8 @@ class SimulatedAnnealingSearch:
                     self.best_obj = current_obj_state
                     self.best_x = current_x_state[:] # Deep copy
                     self.iterations_since_last_improvement = 0
-                    if self.verbose and iteration_count % 1000 == 0: # Occasional progress update
-                         print(f"Iter {iteration_count}, Temp {temp:.2f}, New best obj: {self.best_obj:.2f}")
+                    # if self.verbose and iteration_count % 1000 == 0: # Occasional progress update
+                    #      print(f"Iter {iteration_count}, Temp {temp:.2f}, New best obj: {self.best_obj:.2f}")
                 else:
                     self.iterations_since_last_improvement +=1
             else: # Not accepted

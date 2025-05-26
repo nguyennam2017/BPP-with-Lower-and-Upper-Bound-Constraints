@@ -37,14 +37,5 @@ test_case_settings = {
         "vehicle_min": 100,
         "vehicle_max": 500
     },
-    "huge": { # Trường hợp random
-        "num_cases": 5,
-        "N": 1000,
-        "K": 100,
-        "order_min": 1,
-        "order_max": 100,
-        "vehicle_min": 1,
-        "vehicle_max": 1000
-    },
 
 }

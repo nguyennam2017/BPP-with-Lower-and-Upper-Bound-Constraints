@@ -1,9 +1,9 @@
 {
   "input_file": "test_stress_4.txt",
-  "num_runs": 10,
+  "num_runs": 5,
   "min_cost": 33900.0,
   "max_cost": 33900.0,
   "average_cost": 33900.0,
   "std_cost": 0.0,
-  "total_time": 22.2165
+  "total_time": 8.4946
 }

@@ -1,9 +1,9 @@
 {
   "input_file": "test_small_1.txt",
-  "num_runs": 10,
-  "min_cost": 142.0,
-  "max_cost": 180.0,
-  "average_cost": 164.2,
-  "std_cost": 10.84,
-  "total_time": 0.1027
+  "num_runs": 5,
+  "min_cost": 162.0,
+  "max_cost": 170.0,
+  "average_cost": 166.0,
+  "std_cost": 3.39,
+  "total_time": 0.0604
 }

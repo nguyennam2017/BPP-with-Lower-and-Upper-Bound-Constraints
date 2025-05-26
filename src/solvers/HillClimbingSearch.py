@@ -148,8 +148,8 @@ class HillClimbingSearch():
                 self.load[new_vehicle] += self.d[order]
                 self.cost[new_vehicle] += self.c[order]
             # Update best
-            if self.obj + best_update > self.best_obj:
-                self.best_obj = self.obj + best_update
+            if self.obj > self.best_obj:
+                self.best_obj = self.obj
                 self.best_x = self.x[:]
                 self.best_load = self.load[:]
 
@@ -172,7 +172,7 @@ class HillClimbingSearch():
                 served += 1
             else:
                 not_assigned.append(order)
-        print(served)
+        # print(served)
         for order in range(self.N):
             if best_x[order] != 0:
                 # print(f"{order + 1} {best_x[order]}")
