@@ -1,0 +1,5 @@
+test_huge_1.txt: N=1000, K=100, orders=[1-100], vehicles=[1-1000]
+test_huge_2.txt: N=1000, K=100, orders=[1-100], vehicles=[1-1000]
+test_huge_3.txt: N=1000, K=100, orders=[1-100], vehicles=[1-1000]
+test_huge_4.txt: N=1000, K=100, orders=[1-100], vehicles=[1-1000]
+test_huge_5.txt: N=1000, K=100, orders=[1-100], vehicles=[1-1000]

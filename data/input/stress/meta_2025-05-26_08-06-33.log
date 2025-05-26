@@ -1,0 +1,5 @@
+test_stress_1.txt: N=500, K=100, orders=[50-100], vehicles=[200-1000]
+test_stress_2.txt: N=500, K=100, orders=[50-100], vehicles=[200-1000]
+test_stress_3.txt: N=500, K=100, orders=[50-100], vehicles=[200-1000]
+test_stress_4.txt: N=500, K=100, orders=[50-100], vehicles=[200-1000]
+test_stress_5.txt: N=500, K=100, orders=[50-100], vehicles=[200-1000]

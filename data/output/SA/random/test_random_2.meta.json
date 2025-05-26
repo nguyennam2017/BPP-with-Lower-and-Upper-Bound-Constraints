@@ -1,0 +1,9 @@
+{
+  "input_file": "test_random_2.txt",
+  "num_runs": 10,
+  "min_cost": 2247.0,
+  "max_cost": 2266.0,
+  "average_cost": 2258.4,
+  "std_cost": 9.81,
+  "total_time": 0.5128
+}

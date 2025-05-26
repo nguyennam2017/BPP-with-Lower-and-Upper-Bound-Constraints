@@ -1,5 +1,6 @@
 {
   "input_file": "test_small_2.txt",
+  "num_runs": 1,
   "total_cost": 0,
-  "time": 3.8555
+  "total_time": 1.4832
 }

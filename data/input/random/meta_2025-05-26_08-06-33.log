@@ -1,0 +1,5 @@
+test_random_1.txt: N=50, K=10, orders=[1-100], vehicles=[100-500]
+test_random_2.txt: N=50, K=10, orders=[1-100], vehicles=[100-500]
+test_random_3.txt: N=50, K=10, orders=[1-100], vehicles=[100-500]
+test_random_4.txt: N=50, K=10, orders=[1-100], vehicles=[100-500]
+test_random_5.txt: N=50, K=10, orders=[1-100], vehicles=[100-500]

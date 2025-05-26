@@ -83,7 +83,7 @@ def run_generate_all():
             order_max=config["order_max"],
             vehicle_min=config["vehicle_min"],
             vehicle_max=config["vehicle_max"],
-            seed=42  # Cố định để so sánh được
+            seed=42  # Cố định
         )
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 {
   "input_file": "test_01.txt",
   "num_runs": 1,
-  "total_cost": 0,
-  "total_time": 8.7454
+  "total_cost": 9525,
+  "total_time": 67.0661
 }
