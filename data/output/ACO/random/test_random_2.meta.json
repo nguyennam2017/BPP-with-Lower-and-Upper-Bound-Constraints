@@ -1,9 +1,9 @@
 {
   "input_file": "test_random_2.txt",
   "num_runs": 5,
-  "min_cost": 0,
-  "max_cost": 0,
-  "average_cost": 0,
-  "std_cost": 0.0,
-  "total_time": 25.4202
+  "min_cost": 2012,
+  "max_cost": 2266,
+  "average_cost": 2214.8,
+  "std_cost": 113.37,
+  "total_time": 40.2785
 }

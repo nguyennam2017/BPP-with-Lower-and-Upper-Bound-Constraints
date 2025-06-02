@@ -19,9 +19,13 @@ def main():
                 "stress",   # Trường hợp N,K lớn
                 "random",   # Trường hợp random
             ]   
-    for category in ["small"]:
-        for solver_name, solver_func in Solvers.items():
-            benchmark_solver(solver_name=solver_name, solver_func=solver_func, category=category, num_runs=5, time_limit=5)
+    # for category in ["small"]:
+    #     for solver_name, solver_func in Solvers.items():
+    #         benchmark_solver(solver_name=solver_name, solver_func=solver_func, category=category, num_runs=5, time_limit=5)
         # benchmark_solver(solver_name="SA", solver_func=SimulatedAnnealingSearch, category=category, num_runs=10, time_limit=10)
+    for category in ["stress"]:
+        for solver_name, solver_func in Solvers.items():
+            if solver_name == "ACO":
+                benchmark_solver(solver_name=solver_name, solver_func=solver_func, category=category, num_runs=1, time_limit=5)
 if __name__ == "__main__":
     main()

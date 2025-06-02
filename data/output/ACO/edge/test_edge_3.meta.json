@@ -1,9 +1,9 @@
 {
   "input_file": "test_edge_3.txt",
   "num_runs": 5,
-  "min_cost": 71,
-  "max_cost": 71,
-  "average_cost": 71,
+  "min_cost": 250,
+  "max_cost": 250,
+  "average_cost": 250,
   "std_cost": 0.0,
-  "total_time": 7.704
+  "total_time": 25.6689
 }

@@ -3,7 +3,7 @@
   "num_runs": 5,
   "min_cost": 164,
   "max_cost": 180,
-  "average_cost": 173,
-  "std_cost": 8.31,
-  "total_time": 0.4527
+  "average_cost": 176.4,
+  "std_cost": 6.99,
+  "total_time": 0.47
 }
